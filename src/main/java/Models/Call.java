@@ -13,6 +13,10 @@ public class Call {
 		this.id = id;
 		this.duration =  r.nextInt((MAX_DURATION - MIN_DURATION) + 1) + MIN_DURATION;
 	}
+	public Call(int id, int duration) {
+		this.id = id;
+		this.duration =  duration;
+	}
 	public int getDuration() {
 		return duration;
 	}

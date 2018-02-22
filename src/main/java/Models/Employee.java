@@ -8,10 +8,15 @@ public class Employee implements CallEmployee {
 
 	private String name;
 	private Hierarchy hierarchy;
-	CallDispatcher callDispatcher;
-	
+	CallDispatcher callDispatcher; 
+	Call call;
 	public Employee(String name, Hierarchy hierarchy, CallDispatcher callDispatcher) {
 		this.name = name;
+		this.hierarchy = hierarchy;
+		this.callDispatcher = callDispatcher;
+	}
+	public Employee(Hierarchy hierarchy, CallDispatcher callDispatcher) {
+		this.name = "";
 		this.hierarchy = hierarchy;
 		this.callDispatcher = callDispatcher;
 	}
@@ -19,11 +24,15 @@ public class Employee implements CallEmployee {
 	public void pickCall(Call call) {
 		System.out.println("Employee Name:" + name + "Hierarchy:" + hierarchy + " Pick call id: " + call.getId() );
 		try {
+			this.call = call;
 			TimeUnit.SECONDS.sleep(call.getDuration());
+			System.out.println("Hang Call Name:" + name + "Hierarchy:" + hierarchy );
+			call = null;
 			hangCall();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		
 		
 	}
 
@@ -42,5 +51,7 @@ public class Employee implements CallEmployee {
 	public String getName() {
 		return name;
 	}
-
+	public Call getCall() {
+		return call;
+	}
 }

@@ -8,7 +8,7 @@ import Models.Employee;
 import Models.Hierarchy;
 
 public class CallCenterGeneralOperation {
-	int CALLS = 20;
+	
 	
 	CallDispatcher callDispatcher = new CallDispatcher();
 	
@@ -22,11 +22,10 @@ public class CallCenterGeneralOperation {
 	}
 	@Test
 	public void dispatcherGeneralOperation() {
-	
+		int CALLS = 20;
 		for(int n =0 ; n < CALLS; n ++ ) 
 			callDispatcher.receiveCall(new Call(n));		
 		callDispatcher.close();
-		
 		
 	}
 
