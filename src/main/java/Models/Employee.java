@@ -22,11 +22,11 @@ public class Employee implements CallEmployee {
 	}
 	
 	public void pickCall(Call call) {
-		System.out.println("Employee Name:" + name + "Hierarchy:" + hierarchy + " Pick call id: " + call.getId() );
+		System.out.println( " Pick call id: " + call.getId() + "Employee Name: " + name + " Hierarchy:" + hierarchy );
 		try {
 			this.call = call;
 			TimeUnit.SECONDS.sleep(call.getDuration());
-			System.out.println("Hang Call Name:" + name + "Hierarchy:" + hierarchy );
+			System.out.println("Hang Call Employee Name:" + name + "Hierarchy:" + hierarchy );
 			call = null;
 			hangCall();
 		} catch (InterruptedException e) {
