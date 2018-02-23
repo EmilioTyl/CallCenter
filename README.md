@@ -35,7 +35,7 @@ Para realizar llamadas, se debe escribir tantos caracteres 'c' como llamadas se 
 Escribiendo el caracter 'e' se finaliza el proceso.
 
 ```bash
-  -jar ./target/AlmundoCallCenter-FINAL.jar
+  java -jar ./target/AlmundoCallCenter-FINAL.jar
 ```
 
 ## Test
