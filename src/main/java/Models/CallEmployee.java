@@ -1,4 +1,4 @@
-package Models;
+package models;
 
 public interface CallEmployee extends Comparable<CallEmployee> {
 

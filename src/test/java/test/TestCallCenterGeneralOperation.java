@@ -1,18 +1,20 @@
-package Test;
+package test;
 
-import org.junit.jupiter.api.Test;
 
-import Dispatcher.CallDispatcher;
-import Models.Call;
-import Models.Employee;
-import Models.Hierarchy;
 
-public class CallCenterGeneralOperation {
+import org.junit.Test;
+
+import dispatcher.CallDispatcher;
+import models.Call;
+import models.Employee;
+import models.Hierarchy;
+
+public class TestCallCenterGeneralOperation {
 	
 	
 	CallDispatcher callDispatcher = new CallDispatcher();
 	
-	public CallCenterGeneralOperation() {
+	public TestCallCenterGeneralOperation() {
 		callDispatcher.addCallEmployee(new Employee("Carl", Hierarchy.OPERATOR, callDispatcher));
 		callDispatcher.addCallEmployee(new Employee("Alice", Hierarchy.SUPERVISOR, callDispatcher));
 		callDispatcher.addCallEmployee(new Employee("Lucile", Hierarchy.OPERATOR, callDispatcher));

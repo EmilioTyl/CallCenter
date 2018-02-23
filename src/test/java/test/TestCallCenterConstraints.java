@@ -1,15 +1,18 @@
-package Test;
+package test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
-import org.junit.jupiter.api.Test;
+import java.util.concurrent.TimeUnit;
 
-import Dispatcher.CallDispatcher;
-import Models.Call;
-import Models.Employee;
-import Models.Hierarchy;
+import org.junit.Test;
 
-public class CallCenterConstraints {
+import dispatcher.CallDispatcher;
+import models.Call;
+import models.Employee;
+import models.Hierarchy;
+
+public class TestCallCenterConstraints {
 CallDispatcher callDispatcher = new CallDispatcher();
 	
 	
@@ -24,7 +27,11 @@ CallDispatcher callDispatcher = new CallDispatcher();
 			callDispatcher.addCallEmployee(new Employee(Hierarchy.OPERATOR, callDispatcher));
 		for(int n = 0 ; n < calls; n ++ )
 			callDispatcher.receiveCall(new Call(n,duration));
-		
+		try {
+			TimeUnit.SECONDS.sleep(1);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		 assertEquals(callDispatcher.getSimultaneousCalls(), simultaneousCalls);
 		
 	}
@@ -40,11 +47,14 @@ CallDispatcher callDispatcher = new CallDispatcher();
 			callDispatcher.addCallEmployee(new Employee(Hierarchy.OPERATOR, callDispatcher));
 		for(int n = 0 ; n < calls; n ++ )
 			callDispatcher.receiveCall(new Call(n,duration));
-		
+		try {
+			TimeUnit.SECONDS.sleep(1);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		 assertEquals(callDispatcher.getSimultaneousCalls(), simultaneousCalls);
 		
 	}
-	
 	
 	@Test
 	public void HierarchyOrder() {
@@ -66,11 +76,16 @@ CallDispatcher callDispatcher = new CallDispatcher();
 		callDispatcher.receiveCall(callSup);
 		Call callDir = new Call(3 ,duration);
 		callDispatcher.receiveCall(callDir);
-		
+		try {
+			TimeUnit.SECONDS.sleep(1);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		assertEquals(operator.getCall().getId(), callOp.getId());
 		assertEquals(supervisor.getCall().getId(), callSup.getId());
 		assertEquals(director.getCall().getId(), callDir.getId());
 		
 	}
-
+	
+	
 }

@@ -1,12 +1,12 @@
-package Dispatcher;
+package dispatcher;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import Models.Call;
-import Models.CallEmployee;
+import models.Call;
+import models.CallEmployee;
 
 public class CallDispatcher {
 	

@@ -1,13 +1,13 @@
-package CallCenterMain;
+package main;
 
-import Dispatcher.CallDispatcher;
-import Models.Call;
-import Models.Employee;
-import Models.Hierarchy;
+import dispatcher.CallDispatcher;
+import models.Call;
+import models.Employee;
+import models.Hierarchy;
 
 public class CallCenterMain {
 	 public static void main(String[] args) {
-		 
+	
 		int calls = 20;
 		CallDispatcher callDispatcher = new CallDispatcher();
 		callDispatcher.addCallEmployee(new Employee("Carl", Hierarchy.OPERATOR, callDispatcher));
